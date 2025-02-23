@@ -9,16 +9,25 @@ class XApi{
 
     create=async(info)=>{
         try {
-
-            const data =await this.factory.xDao.create(info)
+            //validarInfo
+            const info =await this.factory.xDao.create(data)
             
-            return await data;
+            return await info;
 
         } catch (error) {
         throw error;
         }
     };
  
+    getAll = async () => {
+        try {
+          // vallidar la palabra
+          const info= await this.factory.xDao.getAllDao();
+          return info;
+        } catch (error) {
+          return error;
+        }
+      };
 }
 
 export default XApi;

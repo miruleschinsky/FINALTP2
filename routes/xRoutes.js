@@ -5,7 +5,8 @@ const xController= new XController()
 
 const xRoutes= Router()
 
-//xRoutes.post("/",(req, res)=>res.send("routes ok"))
 xRoutes.post("/", xController.create)
+xRoutes.get("/", xController.getAll)
+
 
 export default xRoutes
