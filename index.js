@@ -5,12 +5,12 @@ import generalError from "./Midleware/GeneralError.js";
 
 const app=express();
 
-app.use(express.json())
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use("/api", router);
 
-app.use(generalError)
+app.use(generalError);
 
 app.listen(SERVER_PORT, ()=>(
     console.log("server ok")

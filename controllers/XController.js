@@ -6,28 +6,21 @@ class XController{
         this.xApi= new XApi()
     }
 
-    /*create=async(req, res)=>{
+    create=async(req, res)=>{
     try{
         const { info } = req.body;
-        if(!info) throw new Error ("no hay info");
+        if(!info) {
+            throw new Error ("no hay info");
+        }
         const data= await this.xApi.create(info);
         res.status(200).send({message:data})
         }catch (error){
         res.status(422).send({message:error.message})
 
         }
-    };*/
+    };
 
-    create = async (req, res) => {
-        try {
-          const { name} = req.body;
-          if (!name) throw new Error("Campos vacios");
-          const info= await this.xapi.create({name});
-          res.status(200).send(info);
-        } catch (error) {
-          res.status(422).send({ message: error.message });
-        }
-    }
+   
     getAll = async (req, res) => {
         try {
             const data = await this.xApi.getAll();
